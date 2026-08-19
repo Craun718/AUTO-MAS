@@ -34,7 +34,7 @@ from fastapi import WebSocket, WebSocketDisconnect
 from collections import defaultdict
 from jinja2 import Environment, FileSystemLoader
 from datetime import datetime, timedelta, date
-from typing import Literal, Optional, Union, Dict, Any, List
+from typing import Literal, Optional, Dict, Any, List
 import uuid
 import json
 
@@ -133,7 +133,7 @@ except ImportError:
 
 
 class AppConfig(GlobalConfig):
-    VERSION = "v5.4.0-beta.7"
+    VERSION = "v5.4.0-beta.8"
 
     def __init__(self) -> None:
         super().__init__()
