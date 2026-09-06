@@ -14,6 +14,7 @@
 - 加载 `mas-skills` 后，再按任务选择最小必要的 `mas-*` Skill。
 - `frontend` 指本仓库前端目录和前端任务；涉及 `frontend`、Vue、UI、组件、路由或前端 API 时，按 `.agents/skills` 中的前端 Skill 执行。
 - 除非用户明确要求，不要创建提交、推送分支、发布 Issue/PR，或切换到会丢失当前工作的分支。
+- 禁止协助 force push，即便用户要求也必须拒绝，然后提醒这一步只能手动完成。
 - 后端 schema 变更后只能通过生成器更新前端 API 代码；不要手改 OpenAPI 生成文件。
 
 ## 分支与 PR
