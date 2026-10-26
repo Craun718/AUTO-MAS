@@ -340,6 +340,7 @@
                   :pagination="false"
                   size="small"
                   row-key="uid"
+                  :scroll="{ x: 'max-content' }"
                   class="bettergi-weekly-table"
                 >
                   <template #bodyCell="{ column, record }">
@@ -921,15 +922,14 @@ const weeklyFieldCell = (record: WeeklyFieldRow, colKey: string): DragonSettingF
   const idx = Number(match[1])
   return record.fields[idx] ?? null
 }
-// 每日地脉花单行表格列：队伍/策略/地区/任务类型/执行（对应 dailyFieldRow.fields 下标 0~4）
 const dailyColumns = [
   { title: '', key: 'label', width: 72 },
-  { title: t('edit.bettergiColParty'), key: 'col0' },
-  { title: t('edit.bettergiColStrategy'), key: 'col1' },
-  { title: t('edit.bettergiColRegion'), key: 'col2' },
-  { title: t('edit.bettergiColTaskType'), key: 'col3' },
+  { title: t('edit.bettergiColParty'), key: 'col0', width: 180 },
+  { title: t('edit.bettergiColStrategy'), key: 'col1', width: 180 },
+  { title: t('edit.bettergiColRegion'), key: 'col2', width: 180 },
+  { title: t('edit.bettergiColTaskType'), key: 'col3', width: 180 },
 ]
-// 每日地脉花表格：取该行第 index 列的字段（column.key = col0/col1/...）
+// 每日地脉花表格：dailyCell 按 col0/col1/... 取行内字段
 const dailyCell = (record: WeeklyFieldRow, colKey: string): DragonSettingField | null => {
   const match = /^col(\d+)$/.exec(colKey)
   if (!match || !record.fields) return null
